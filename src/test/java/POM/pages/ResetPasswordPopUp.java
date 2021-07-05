@@ -16,8 +16,8 @@ public class ResetPasswordPopUp extends BasePage {
     }
 
     @Step("type into email field")
-    public void typeIntoEmailField() {
-        type(emailField, "z4yr1d3@esiix.com");
+    public void typeIntoEmailField(String email) {
+        type(emailField, email);
         click(confirmationEmailButton);
     }
 }

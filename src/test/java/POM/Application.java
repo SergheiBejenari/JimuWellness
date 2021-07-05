@@ -1,27 +1,23 @@
 package POM;
 
-import POM.pages.HomePage;
-import POM.pages.LogInPage;
-import POM.pages.ResetPasswordPage;
-import POM.pages.ResetPasswordPopUp;
+import POM.pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.DriverFactory;
 import utils.PropertyReader;
-import utils.Requests;
 
 import java.util.concurrent.TimeUnit;
 
 public class Application {
+    public final String url;
+    private final short defaultTimeout;
     private WebDriver driver;
     private WebDriverWait wait;
     private HomePage homePage;
     private LogInPage logInPage;
+    private DashBord dashBord;
     private ResetPasswordPopUp resetPasswordPopUp;
     private ResetPasswordPage resetPasswordPage;
-    private Requests requests;
-    public final String url;
-    private final short defaultTimeout;
 
 
     public Application() {
@@ -86,11 +82,10 @@ public class Application {
         return resetPasswordPage;
     }
 
-    public Requests requests() {
-        if (requests == null) {
-            requests = new Requests();
+    public DashBord dashBord() {
+        if (dashBord == null) {
+            dashBord = new DashBord(this);
         }
-        return requests;
+        return dashBord;
     }
-
 }

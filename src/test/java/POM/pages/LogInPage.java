@@ -30,13 +30,13 @@ public class LogInPage extends BasePage {
         click(submitButton);
     }
 
-    @Step("check if error message is present")
-    public String isErrorMessagePresent() {
+    @Step("get Error message")
+    public String getErrorMessage() {
         return driver.findElement(errorMessage).getAttribute("innerText");
     }
 
     @Step("reset password")
-    public void resetPassword() {
+    public void clickToResetPasswordButton() {
         driver.findElement(getResetPasswordButton()).click();
     }
 }

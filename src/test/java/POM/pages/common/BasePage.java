@@ -10,10 +10,10 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClick
 
 
 public class BasePage {
+    protected final short defaultTimeout;
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected String baseUrl;
-    protected final short defaultTimeout;
 
     protected BasePage(Application app) {
         this.baseUrl = app.url;

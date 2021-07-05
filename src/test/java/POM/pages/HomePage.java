@@ -17,7 +17,7 @@ public class HomePage extends BasePage {
         super(app);
     }
 
-    public void clickToLogInButton() {
+    public void clickLogInButton() {
         click(logInButton);
     }
 
